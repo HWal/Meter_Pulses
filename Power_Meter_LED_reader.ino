@@ -92,6 +92,7 @@ unsigned long totalKwh = 0;               // Enter this value on the webpage
                                           // at boot time, read it on the meter.
 double cosPhi = 1.;                       // cos phi calculated from pulses
                                           // since NodeMCU was started.
+bool valueEntered = false;                // Allow entering kWh value only once.
 
 
 // THE WEBSITE STUFF
@@ -231,7 +232,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
       break;
     }
     case WStype_TEXT: {
-      if ((payload[0] == '0') && (payload[1] == '0') && (payload[2] == '#')) {
+      if (((payload[0] == '0') && (payload[1] == '0') && (payload[2] == '#')) && (!valueEntered)) {
         char ch3 = payload[3];
         char ch4 = payload[4];
         char ch5 = payload[5];
@@ -242,6 +243,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
         nStr = nStr + ch3 + ch4 + ch5 + ch6 + ch7 + ch8;
         int nInt = atoi(nStr.c_str());
         totalKwhPulses = nInt * PULSES_PER_UNIT;
+        valueEntered = true;
       }
       break;
     }
