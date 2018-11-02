@@ -3,7 +3,7 @@
 NodeMCU V3 electric meter pulse measuring
 =========================================
 
-This Arduino sketch is made for collecting KWh and kVAr LED pulses from a "smart" electric power meter. By measuring the time between pulses, active and reactive power is calculated. Also, it is possible to keep track of the total consumed electric energy, see below.
+This Arduino sketch is made for collecting KWh and kVAr LED pulses from a "smart" electric power meter. Specifically, this project has been tested on a KAIFA MA304H3E meter. By measuring the time between pulses, active and reactive power is calculated. Also, it is possible to keep track of the total consumed electric energy, see below.
 
 Note: The program is not designed for systems where power is generated inside the circuit measured by the meter.
 
@@ -55,4 +55,4 @@ Compile and upload the sketch. As soon as the upload reaches 100%, open the seri
 
 The ip address (automatically given to the unit by the DHCP server) is reported on the serial monitor. To connect, type the address into the address field of your browser on a PC or mobile phone as long as it is connected to the same local network. From the outside world you need to type your public ip address. This requires that you have performed the port forwarding mentioned above.
 
-You should now have a simple webpage on your browser, allowing you to monitor the values calculated from the meter pulses. Also, if you enter the meter counter value at bootup, you can keep track of the total electric energy consumed in your house/flat on your mobile phone or PC.
+You should now have a simple webpage on your browser, allowing you to monitor the values calculated from the meter pulses. Also, if you enter the current meter kWh value after bootup (only once per system start), you can keep track of the total electric energy consumed in your house/flat on your mobile phone or PC. Note: I have found that there is a small drift in the energy value calculated from the LED blinks compared to the meter display itself. Any suggestions to explain this are very welcome.
