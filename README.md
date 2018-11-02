@@ -3,7 +3,7 @@
 NodeMCU V3 electric meter pulse measuring
 =========================================
 
-This Arduino sketch is made for collecting KWh and kVAr LED pulses from a "smart" electric power meter. Specifically, this project has been tested on a KAIFA MA304H3E meter. By measuring the time between pulses, active and reactive power is calculated. Also, it is possible to keep track of the total consumed electric energy, see below.
+This Arduino sketch is made for collecting KWh and kVAr LED pulses from a "smart" electric power meter. Specifically, this project has been tested on a Kaifa (MA304H3E 3-phase) meter. By measuring the time between pulses, active and reactive power is calculated. Also, it is possible to keep track of the total consumed electric energy, see below.
 
 Note: The program is not designed for systems where power is generated inside the circuit measured by the meter.
 
