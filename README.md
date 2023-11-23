@@ -11,7 +11,7 @@ Three breakout boards are needed to complete this rather simple project. Please 
 
 Communication is based on the Websocket protocol (ws). To connect from the outside world, ports 80 and 81 need to be forwarded in your router.
 
-More than one client can connect to the NodeMCU module (server) at the same time.
+Several clients can connect to the NodeMCU module (server) at the same time.
 
 Hardware
 --------
